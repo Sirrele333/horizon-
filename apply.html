@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Internship - Horizon Hospitality</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fdf9f3;
+            color: #444;
+        }
+        header {
+            background-color: #8b5e3c;
+            color: white;
+            text-align: center;
+            padding: 40px 10px;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            padding: 40px 20px;
+            text-align: center;
+            max-width: 900px;
+            margin: auto;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 12px;
+            width: 80%;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-top: 5px;
+        }
+        button {
+            padding: 12px 20px;
+            background-color: #8b5e3c;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #6b3e2e;
+        }
+        .message {
+            margin-top: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #6b3e2e;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Apply for Internship</h1>
+    </header>
+    <div class="container">
+        <h2>Enter your RSA ID Number to Apply</h2>
+        <form id="applyForm">
+            <div class="form-group">
+                <label for="idNumber">RSA ID Number:</label>
+                <input type="text" id="idNumber" name="idNumber" placeholder="Enter your RSA ID number" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="message" id="successMessage" style="display: none;">
+            Successfully applied! Please make sure you pay a small fee of R250 to secure a certification with the RSA Tourism Community that ensures you are practicing honest tourism. Payments can be made through EFT which will require additional banking fees or simply through a cash send that can be sent to jacobventee222@gmail.com and proof to wvanderwalt53@gmail.com. You will receive a letter and an invitation to our branch to meet the team and undergo training.
+        </div>
+    </div>
+    <script>
+        // Form submission logic
+        document.getElementById('applyForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from refreshing the page
+            
+            // Get RSA ID number value
+            const idNumber = document.getElementById('idNumber').value;
+            
+            // Check if the ID number is valid (a basic check for length)
+            if (idNumber.length === 13) {
+                // Show success message
+                document.getElementById('successMessage').style.display = 'block';
+            } else {
+                alert("Please enter a valid RSA ID number.");
+            }
+        });
+    </script>
+</body>
+</html>
